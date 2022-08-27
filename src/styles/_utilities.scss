@@ -1,0 +1,656 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import "./colors";
+@import "./utilities-2";
+@import "./utilities-3";
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body,
+button {
+  font-size: 18px;
+}
+
+a {
+  color: #000;
+
+  &.underlined {
+    &:not(:hover) {
+      text-decoration: underline;
+    }
+  }
+}
+
+h3 {
+  font-size: 40px;
+}
+
+.page-section {
+  width: 100%;
+}
+
+#auth-layout,
+#main-layout {
+  #navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+
+    .page-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .btns {
+        display: flex;
+        gap: 16px;
+      }
+    }
+  }
+}
+
+#auth-layout {
+  background-color: $color1;
+  height: 100vh;
+  background-image: url("../assets/vectors/bg-auth-layout.svg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .layout-main-content {
+    background-color: #fff;
+    max-width: 1040px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+
+    & > * {
+      width: 100%;
+      margin: 2rem 0;
+      overflow-y: auto;
+
+      max-height: calc(100vh - (4rem));
+
+      @media screen and (max-width: 1200px) {
+        max-height: calc(100% - (10rem));
+      }
+
+      &::-webkit-scrollbar {
+        width: 3px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: #ccc;
+      }
+    }
+
+    .title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      .title {
+        font-weight: 400;
+        flex-shrink: 0;
+      }
+
+      img {
+        max-width: 260px;
+      }
+    }
+
+    .logo-wrap {
+      text-align: center;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .form-wrap {
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+#quiz-layout {
+  display: flex;
+
+  height: 100vh;
+
+  & > * {
+    height: 100%;
+    padding-top: 70px;
+    padding-bottom: 60px;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      background-color: #ccc;
+    }
+  }
+
+  .sidebar {
+    width: 400px;
+    flex-shrink: 0;
+    box-shadow: 3px 0 20px rgba($color: #000000, $alpha: 0.16);
+    padding-left: 30px;
+    padding-right: 30px;
+    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .logo-wrap {
+      max-width: 250px;
+      margin: 0 auto;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .sub-title {
+      background-color: $color7;
+      color: $color8;
+      font-size: 22px;
+      border-radius: 14px;
+      font-weight: bold;
+      text-align: center;
+      padding: 12px 6px;
+    }
+
+    .timer {
+      margin-top: 34px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      .time-component {
+        text-align: center;
+
+        .main {
+          font-size: 28px;
+          text-align: center;
+          color: #fff;
+          font-weight: bold;
+          border-radius: 10px;
+          background-color: $color11;
+          padding: 12px 10px;
+          width: 66px;
+          flex-shrink: 0;
+        }
+
+        &.colon {
+          .main {
+            width: 20px;
+            background-color: transparent;
+            color: #555555;
+            padding: 0;
+          }
+
+          .main {
+          }
+        }
+
+        .sub {
+        }
+
+        &.active {
+          .main {
+            background-color: $color10;
+          }
+        }
+      }
+    }
+
+    .question-selector {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      .question {
+        width: 50px;
+        height: 50px;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        border-radius: 8px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 32px;
+        background-color: $color11;
+        cursor: pointer;
+        position: relative;
+
+        @include transitioned;
+
+        &.active {
+          background-color: $color1;
+        }
+
+        &.flagged {
+          overflow: hidden;
+
+          &::before {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 12px;
+            background-color: $color10;
+            left: -8px;
+            top: 0;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+
+    .btn {
+      height: 60px;
+      margin-top: 40px;
+
+      @media screen and (min-height: 880px) {
+        margin-top: 120px;
+      }
+
+      .btn-text {
+        font-size: 30px;
+      }
+    }
+  }
+
+  .layout-main-content {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 0;
+    flex-grow: 1;
+
+    .page-container {
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      height: 100%;
+
+      & > div {
+        height: 100%;
+      }
+    }
+
+    .progress-bar {
+      background-color: $color12;
+      border-radius: 40px;
+      height: 38px;
+      padding: 5px 6px;
+      width: 100%;
+
+      .progress {
+        border-radius: 40px;
+        background-color: $color1;
+        height: 100%;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 1rem;
+        color: #fff;
+        font-weight: bold;
+      }
+    }
+
+    .question-wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      gap: 40px;
+
+      & > .btns {
+        padding-bottom: 60px;
+      }
+    }
+
+    .question {
+      background-color: $color12;
+      padding: 40px 56px;
+      margin-top: 32px;
+      border-radius: 30px;
+
+      .num {
+        font-size: 20px;
+        opacity: 0.4;
+        font-weight: 400;
+      }
+
+      .statement {
+        margin-top: 10px;
+        font-size: 22px;
+        font-weight: 500;
+      }
+    }
+
+    .question-options {
+      // opacity: 0.8;
+    }
+
+    label {
+      font-size: 20px;
+    }
+
+    textarea {
+      border-radius: 16px;
+      font-size: 20px;
+      resize: none;
+    }
+
+    .quiz-image {
+      text-align: center;
+      margin: 1rem auto;
+      max-width: 522px;
+      position: relative;
+
+      img {
+        cursor: pointer;
+      }
+
+      .magnifier {
+        position: absolute;
+        right: 16px;
+        bottom: 20px;
+      }
+    }
+
+    .options {
+      margin-top: 10px;
+
+      .option {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 10px;
+        cursor: pointer;
+
+        .digit {
+          font-size: 28px;
+          font-weight: bold;
+        }
+
+        .statement {
+          border-radius: 14px;
+          padding: 16px 60px;
+          background-color: $color12;
+          font-size: 20px;
+          width: 50%;
+        }
+
+        &.active {
+          .statement {
+            background-color: $color1;
+            color: #fff;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+.btn {
+  border-radius: 10px;
+  background-color: transparent;
+  border: none;
+  height: 56px;
+  display: inline-flex !important;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  @include transitioned;
+
+  &.lg {
+    .btn-text {
+      font-size: 22px;
+    }
+  }
+
+  .btn-text {
+    font-weight: 600;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &.btn-primary {
+    background-color: $color1;
+
+    .btn-text {
+      color: #fff !important;
+    }
+  }
+
+  &.btn-green {
+    background-color: #55b292;
+
+    .btn-text {
+      color: #fff;
+    }
+  }
+
+  &.btn-transparent {
+    padding-left: 0;
+    padding-right: 0;
+    background-color: #fff;
+
+    .btn-text {
+    }
+  }
+
+  &.btn-dark {
+    background-color: $color2;
+
+    .btn-text {
+      color: #fff;
+    }
+  }
+
+  &.btn-white {
+    background-color: #fff;
+
+    .btn-text {
+      color: $color1;
+    }
+  }
+
+  &.btn-danger {
+    background-color: $color10;
+
+    .btn-text {
+      color: #fff;
+    }
+  }
+}
+
+.custom-form-control {
+  margin-bottom: 16px;
+
+  label {
+    font-weight: 600;
+    font-size: 16px;
+
+    @media screen and (max-width: 991px) {
+      font-size: 12px;
+    }
+
+    @media screen and (max-width: 575px) {
+      font-size: 10px;
+    }
+  }
+
+  .input {
+    position: relative;
+  }
+
+  input,
+  textarea {
+    border: 1px solid transparent;
+    width: 100%;
+    margin-top: 8px;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 16px;
+    color: #06152b;
+    font-weight: 600;
+    background-color: $color3;
+
+    @include transitioned;
+
+    &::placeholder {
+      color: $color4;
+      font-weight: 400;
+    }
+
+    @media screen and (max-width: 991px) {
+      font-size: 12px;
+    }
+
+    @media screen and (max-width: 575px) {
+      font-size: 10px;
+    }
+
+    &:focus {
+      border-color: $color1;
+      color: $color1;
+    }
+  }
+
+  input {
+    height: 48px;
+  }
+
+  .icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(calc(-50% + 3px));
+    cursor: pointer;
+  }
+
+  .max-count {
+    position: absolute;
+    right: 30px;
+    bottom: 16px;
+    opacity: 0.4;
+  }
+
+  &.has-error {
+    input,
+    textarea,
+    .custom-select-container {
+      border-color: red !important;
+    }
+  }
+}
+
+/* The container */
+.custom-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 14px;
+  margin-left: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 20px;
+  width: 20px;
+  background-color: $color5;
+  border-radius: 4px;
+}
+
+/* On mouse-over, add a grey background color */
+.custom-checkbox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.custom-checkbox input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.custom-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.custom-checkbox .checkmark:after {
+  left: 0px;
+  top: 0px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, calc(-50% - 2px)) rotate(45deg);
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+}
