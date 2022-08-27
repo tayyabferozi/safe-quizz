@@ -8,8 +8,12 @@ const Navbar = () => {
     <Section id="navbar">
       <div></div>
       <div className="btns">
-        <Button dark>Register</Button>
-        <Button white>Sign In</Button>
+        <Button to="/signup" dark>
+          Register
+        </Button>
+        <Button to="/login" white>
+          Sign In
+        </Button>
       </div>
     </Section>
   );

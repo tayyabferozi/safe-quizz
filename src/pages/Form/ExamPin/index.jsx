@@ -18,7 +18,7 @@ const ExamPin = () => {
         <form action="" className="mt-60">
           <Input inputClassName="text-center" placeholder="Enter Exam Pin" />
 
-          <Button lg primary className="w-100 mt-10">
+          <Button to="/signup" lg primary className="w-100 mt-10">
             Start Quiz
           </Button>
         </form>

@@ -44,7 +44,7 @@ const Image = () => {
           <GridContainer rowClassName="gx-40">
             {options.map((el, idx) => {
               return (
-                <div className="col-lg-6">
+                <div className="col-lg-6" key={"options-num" + idx}>
                   <QuizOption statementClassName="w-100" {...el} idx={idx} />
                 </div>
               );
@@ -53,7 +53,7 @@ const Image = () => {
         </div>
       </div>
 
-      <QuizButtons />
+      <QuizButtons prevTo="/multiple-choice" nextTo="/open" />
     </>
   );
 };

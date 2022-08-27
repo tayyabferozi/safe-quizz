@@ -1,5 +1,7 @@
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 
+import ScrollToTop from "./components/ScrollToTop";
+
 import AuthLayout from "./layouts/AuthLayout";
 import QuizLayout from "./layouts/QuizLayout";
 
@@ -15,6 +17,7 @@ import Open from "./pages/Quiz/Open";
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<AuthLayout />}>
           <Route path="pin" element={<ExamPin />} />

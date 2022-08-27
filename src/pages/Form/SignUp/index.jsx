@@ -33,10 +33,10 @@ const SignUp = () => {
           <Input type="password" placeholder="Password" />
           <Input type="password" placeholder="Repeat Password" />
 
-          <label class="custom-checkbox">
+          <label className="custom-checkbox">
             Subscribe to updates on products, offers, and discounts.
             <input type="checkbox" />
-            <span class="checkmark"></span>
+            <span className="checkmark"></span>
           </label>
 
           <label className="custom-checkbox">
@@ -53,7 +53,7 @@ const SignUp = () => {
             <span className="checkmark"></span>
           </label>
 
-          <Button lg primary className="w-100 mt-30">
+          <Button to="/login" lg primary className="w-100 mt-30">
             Sign Up
           </Button>
         </form>

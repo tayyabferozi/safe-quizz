@@ -1,6 +1,5 @@
 import React from "react";
 
-import GridContainer from "../../../components/GridContainer";
 import Input from "../../../components/Input";
 import QuizButtons from "../../../components/QuizButtons";
 import QuizQuestion from "../../../components/QuizQuestion";
@@ -22,7 +21,7 @@ const Open = () => {
         </div>
       </div>
 
-      <QuizButtons />
+      <QuizButtons prevTo="/image" />
     </>
   );
 };

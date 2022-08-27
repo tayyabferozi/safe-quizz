@@ -29,8 +29,8 @@ const Button = ({
 
   if (to) {
     return (
-      <NavLink className={classes} href={to} {...rest}>
-        <div className="btn-text">{children}</div>;
+      <NavLink className={classes} to={to} {...rest}>
+        <div className="btn-text">{children}</div>
       </NavLink>
     );
   } else {

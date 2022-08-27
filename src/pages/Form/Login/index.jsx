@@ -22,13 +22,13 @@ const SignUp = () => {
 
           <Input type="password" placeholder="Password" />
 
-          <label class="custom-checkbox">
+          <label className="custom-checkbox">
             Keep me signed in
             <input type="checkbox" />
-            <span class="checkmark"></span>
+            <span className="checkmark"></span>
           </label>
 
-          <Button lg primary className="w-100 mt-30">
+          <Button to="/choose-plan" lg primary className="w-100 mt-30">
             Sign In
           </Button>
         </form>

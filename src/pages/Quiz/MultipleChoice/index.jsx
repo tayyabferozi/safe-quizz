@@ -1,6 +1,7 @@
 import React from "react";
 
 import Button from "../../../components/Button";
+import QuizButtons from "../../../components/QuizButtons";
 import QuizOption from "../../../components/QuizOption";
 import QuizQuestion from "../../../components/QuizQuestion";
 
@@ -28,15 +29,18 @@ const MultipleChoice = () => {
 
         <div className="options">
           {options.map((el, idx) => {
-            return <QuizOption idx={idx} {...el} />;
+            return (
+              <QuizOption
+                key={"quiz-option-multiple" + idx}
+                idx={idx}
+                {...el}
+              />
+            );
           })}
         </div>
       </div>
 
-      <div className="btns d-flex justify-content-end gap-30">
-        <Button transparent>Previous</Button>
-        <Button green>Next</Button>
-      </div>
+      <QuizButtons prevTo="/choose-plan" nextTo="/image" />
     </>
   );
 };

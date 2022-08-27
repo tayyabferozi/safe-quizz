@@ -3,6 +3,8 @@ import React from "react";
 import GridContainer from "../../../components/GridContainer";
 import Button from "../../../components/Button";
 import Input from "../../../components/Input";
+import Select from "../../../components/Select/Select";
+import Option from "../../../components/Select/Option";
 
 const ChoosePlan = () => {
   return (
@@ -11,6 +13,11 @@ const ChoosePlan = () => {
         <div className="title-wrap">
           <h3 className="title text-center flex-grow-1">Choose a Plan</h3>
         </div>
+
+        <Select name="plan">
+          <Option value="Standard">Standard</Option>
+          <Option value="Other">Other</Option>
+        </Select>
 
         <div className="mt-50">
           <div className="title-wrap">
@@ -34,13 +41,13 @@ const ChoosePlan = () => {
               </div>
             </GridContainer>
 
-            <label class="custom-checkbox mt-20">
+            <label className="custom-checkbox mt-20">
               Save card for future transactions
               <input type="checkbox" />
-              <span class="checkmark"></span>
+              <span className="checkmark"></span>
             </label>
 
-            <Button lg primary className="w-100 mt-30">
+            <Button to="/multiple-choice" lg primary className="w-100 mt-30">
               Continue
             </Button>
           </form>
