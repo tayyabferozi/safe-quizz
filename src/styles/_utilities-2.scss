@@ -5111,6 +5111,10 @@ select {
   outline: none;
 }
 
+.c-pointer {
+  cursor: pointer;
+}
+
 @mixin transitioned($delay: 0s) {
   transition: all 0.4s $delay ease;
 }

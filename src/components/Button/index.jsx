@@ -12,6 +12,8 @@ const Button = ({
   danger,
   green,
   lg,
+  textClassName,
+  icon,
   children,
   ...rest
 }) => {
@@ -27,16 +29,23 @@ const Button = ({
     { lg }
   );
 
+  const btnText = (
+    <>
+      {icon && <img src={icon} title="icon" className="icon" alt="icon" />}
+      <div className={clsx("btn-text", textClassName)}>{children}</div>
+    </>
+  );
+
   if (to) {
     return (
       <NavLink className={classes} to={to} {...rest}>
-        <div className="btn-text">{children}</div>
+        {btnText}
       </NavLink>
     );
   } else {
     return (
       <button className={classes} {...rest}>
-        <div className="btn-text">{children}</div>
+        {btnText}
       </button>
     );
   }

@@ -11,6 +11,7 @@ const Input = ({
   type = "text",
   label,
   placeholder,
+  icon,
   ...rest
 }) => {
   const [showPwd, setShowPwd] = useState(false);
@@ -84,6 +85,7 @@ const Input = ({
             {...rest}
           />
         )}
+        {icon && <img className="icon" src={icon} alt="icon" title="icon" />}
       </div>
     </div>
   );
