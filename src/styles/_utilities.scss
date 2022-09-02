@@ -110,8 +110,12 @@ h6 {
     padding: 26px;
     z-index: 5;
 
+    @include transitioned;
+
     &.scrolled {
       background-color: #fff;
+      padding-top: 10px;
+      padding-bottom: 10px;
     }
 
     .page-container {
