@@ -1,4 +1,6 @@
+import clsx from "clsx";
 import React from "react";
+import { useState } from "react";
 
 import GridContainer from "../../../components/GridContainer";
 import QuizButtons from "../../../components/QuizButtons";
@@ -22,12 +24,39 @@ const options = [
 ];
 
 const Image = () => {
+  const [isImgActive, setIsImgActive] = useState(false);
+
+  const toggleImg = () => {
+    document.querySelector(".layout-main-content").scrollTo(0, 0);
+    document
+      .querySelector(".layout-main-content")
+      .classList.toggle("overflow-y-hidden");
+    setIsImgActive((prevState) => !prevState);
+  };
+
   return (
     <>
-      <div>
+      <div className="quiz-with-image-main">
         <QuizQuestion />
 
-        <div className="quiz-image">
+        <div className={clsx("quiz-img-full", isImgActive && "active")}>
+          <div className="quiz-img-wrap">
+            <img
+              className="quiz-img"
+              src="/assets/imgs/quiz-dummy-img.png"
+              alt="quiz-dummy"
+              title="quiz-dummy"
+            />
+            <img
+              onClick={toggleImg}
+              src="/assets/vectors/close.svg"
+              alt="close"
+              className="close"
+            />
+          </div>
+        </div>
+
+        <div className="quiz-image" onClick={toggleImg}>
           <img
             src="/assets/imgs/quiz-dummy-img.png"
             alt="quiz-dummy"

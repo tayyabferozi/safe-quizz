@@ -2,10 +2,10 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
 
-const QuizLayout = () => {
+const QuizLayout = ({ teachersView }) => {
   return (
     <div id="quiz-layout">
-      <Sidebar />
+      <Sidebar teachersView={teachersView} />
 
       <div className="layout-main-content">
         <div className="page-container">

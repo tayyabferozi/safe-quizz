@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Button from "../../../components/Button";
-import GridContainer from "../../../components/GridContainer";
-import Input from "../../../components/Input";
-import Section from "../../../components/Section";
+import Button from "../../components/Button";
+import GridContainer from "../../components/GridContainer";
+import Input from "../../components/Input";
+import Section from "../../components/Section";
 
 const Footer = () => {
   return (

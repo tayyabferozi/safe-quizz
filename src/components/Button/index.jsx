@@ -15,6 +15,7 @@ const Button = ({
   textClassName,
   icon,
   children,
+  primaryLight,
   ...rest
 }) => {
   const classes = clsx(
@@ -26,6 +27,7 @@ const Button = ({
     danger && "btn-danger",
     green && "btn-green",
     transparent && "btn-transparent",
+    primaryLight && "btn-primary-light",
     { lg }
   );
 

@@ -1,6 +1,5 @@
 import React from "react";
 
-import Button from "../../../components/Button";
 import QuizButtons from "../../../components/QuizButtons";
 import QuizOption from "../../../components/QuizOption";
 import QuizQuestion from "../../../components/QuizQuestion";
