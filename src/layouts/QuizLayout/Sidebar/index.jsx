@@ -111,7 +111,7 @@ const Sidebar = ({ teachersView }) => {
         <div className="students-info">
           <Search notifications placeholder="Search in Participants…" />
 
-          <div className="listing-row head mt-20">
+          <div className="listing-row head mt-20 mt-991-10">
             <div className="left">Participants</div>
             <div className="right">12</div>
           </div>
@@ -206,7 +206,7 @@ const Sidebar = ({ teachersView }) => {
         </div>
       ) : (
         <div className="info">
-          <div className="sub-title">Time Left</div>
+          <div className="sub-title d-lg-block d-none">Time Left</div>
 
           <div className="timer">
             <div className="time-component">
@@ -231,22 +231,26 @@ const Sidebar = ({ teachersView }) => {
             </div>
           </div>
 
-          <div className="sub-title mt-30">Quiz: Ancient Egypt</div>
-
-          <div className="question-selector">
-            <button className="question active">1</button>
-            <button className="question active flagged">2</button>
-            <button className="question active">3</button>
-            <button className="question">4</button>
-            <button className="question active">5</button>
-            <button className="question">6</button>
-            <button className="question">7</button>
-            <button className="question">8</button>
-            <button className="question">9</button>
-            <button className="question">10</button>
+          <div className="sub-title mt-30 mt-991-0 quiz-title">
+            Quiz: Ancient Egypt
           </div>
 
-          <div className="d-flex justify-content-center">
+          <div className="question-selector-wrap clearfix">
+            <div className="question-selector">
+              <button className="question active">1</button>
+              <button className="question active flagged">2</button>
+              <button className="question active">3</button>
+              <button className="question">4</button>
+              <button className="question active">5</button>
+              <button className="question">6</button>
+              <button className="question">7</button>
+              <button className="question">8</button>
+              <button className="question">9</button>
+              <button className="question">10</button>
+            </div>
+          </div>
+
+          <div className="d-flex justify-content-center btn-wrap align-items-start">
             <Button lg danger className="">
               End Quiz
             </Button>

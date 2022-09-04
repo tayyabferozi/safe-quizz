@@ -59,12 +59,12 @@ const MyExams = () => {
         </div>
       </div>
 
-      <GridContainer>
+      <GridContainer rowClassName="gx-1600-20">
         {examsData.map((el, idx) => {
           const { name, questions, date, timeStart, timeEnd } = el;
 
           return (
-            <div key={"exam" + idx} className="col-lg-4">
+            <div key={"exam" + idx} className="col-lg-4 col-md-6">
               <div className="custom-card">
                 <div className="fw-bold">{name}</div>
                 <GridContainer className="mt-2" rowClassName="gy-10 gx-0">
@@ -72,14 +72,18 @@ const MyExams = () => {
                     <div className="label">Questions</div>
                     <div className="fs-14">{questions}</div>
                   </div>
-                  <div className="col-6">
-                    <div className="label">Date</div>
-                    <div className="fs-14">{date}</div>
-                  </div>
-                  <div className="col-6">
-                    <div className="label">Time</div>
-                    <div className="fs-14">
-                      {timeStart} - {timeEnd}
+                  <div className="col-12">
+                    <div className="d-flex flex-wrap gap-10 justify-content-between">
+                      <div>
+                        <div className="label">Date</div>
+                        <div className="fs-14">{date}</div>
+                      </div>
+                      <div>
+                        <div className="label">Time</div>
+                        <div className="fs-14">
+                          {timeStart} - {timeEnd}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </GridContainer>
@@ -100,8 +104,11 @@ const MyExams = () => {
         <GridContainer className="mt-20">
           {statsData.map((el, idx) => {
             return (
-              <div className="col-lg-3" key={"stats_item" + idx}>
-                <div className="custom-card p-40">
+              <div
+                className="col-xl-3 col-lg-4 col-md-6 col-sm-6"
+                key={"stats_item" + idx}
+              >
+                <div className="custom-card stats-card">
                   <p className="text-dark-1">{el.label}</p>
 
                   <h3 className="d-flex align-items-center gap-10">

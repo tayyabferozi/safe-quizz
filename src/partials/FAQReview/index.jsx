@@ -9,7 +9,7 @@ const FAQReview = ({ className }) => {
         Did you find what you were looking for?
       </div>
 
-      <div className="btns">
+      <div className="btns flex-shrink-0">
         <Button icon="/assets/vectors/thumb.svg" className="thumb-down">
           15
         </Button>

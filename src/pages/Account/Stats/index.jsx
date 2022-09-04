@@ -101,7 +101,7 @@ const MyExams = () => {
       <GridContainer className="mt-20">
         {statsData.map((el, idx) => {
           return (
-            <div className="col-lg-3" key={"stats_item" + idx}>
+            <div className="col-xxl-3 col-sm-6" key={"stats_item" + idx}>
               <div className="custom-card h-100 p-40 py-1600-30 px-1600-20">
                 <CardMenu
                   absolute
@@ -142,7 +142,7 @@ const MyExams = () => {
             const { name, questions, date, timeStart, timeEnd } = el;
 
             return (
-              <div key={"exam" + idx} className="col-lg-4">
+              <div key={"exam" + idx} className="col-xxl-4 col-md-6">
                 <div className="custom-card">
                   <div className="d-flex justify-content-between">
                     <div className="fw-bold">{name}</div>

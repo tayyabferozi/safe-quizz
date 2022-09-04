@@ -8,8 +8,8 @@ import Section from "../../components/Section";
 const Footer = () => {
   return (
     <Section id="footer">
-      <GridContainer>
-        <div className="col-xl">
+      <GridContainer rowClassName="gy-40">
+        <div className="col-xl col-lg-4 col-sm-6">
           <div className="fw-bold">SafeQuizz</div>
 
           <div className="links">
@@ -20,7 +20,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="col-xl">
+        <div className="col-xl col-lg-4 col-sm-6">
           <div className="fw-bold">Support</div>
 
           <div className="links">
@@ -31,7 +31,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="col-xl">
+        <div className="col-xl col-lg-4 col-sm-6">
           <div className="fw-bold">Need Help?</div>
 
           <div className="links">
@@ -56,7 +56,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="col-xl">
+        <div className="col-xl col-lg-4 col-sm-6">
           <div className="fw-bold">Connect With Us</div>
 
           <div className="links d-flex gap-1">
@@ -72,7 +72,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="col-xl-3">
+        <div className="col-xl-3 col-lg-4 col-sm-12">
           <div className="fs-12 fw-600">Subscribe to SafeQuizz via Email</div>
           <div className="mt-20 fs-14 fw-500">
             Subscribe to our newsletter and receive exclusive offers and

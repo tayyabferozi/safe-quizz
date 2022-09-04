@@ -45,7 +45,7 @@ const Step1 = ({ onNext }) => {
         </Select>
 
         <GridContainer rowClassName="gy-1">
-          <div className="col-4">
+          <div className="col-sm-4">
             <Select placeholder="Date">
               {Array(31)
                 .fill()
@@ -58,7 +58,7 @@ const Step1 = ({ onNext }) => {
                 })}
             </Select>
           </div>
-          <div className="col-4">
+          <div className="col-sm-4">
             <Select placeholder="Month">
               {months.map((el, idx) => {
                 return (
@@ -69,7 +69,7 @@ const Step1 = ({ onNext }) => {
               })}
             </Select>
           </div>
-          <div className="col-4">
+          <div className="col-sm-4">
             <Select placeholder="Year">
               {Array(30)
                 .fill()
@@ -84,8 +84,8 @@ const Step1 = ({ onNext }) => {
                 })}
             </Select>
           </div>
-          <div className="col-6">
-            <div className="time-picker-container">
+          <div className="col-sm-6">
+            <div className="time-picker-container mb-3 mb-sm-0">
               <div className="label">STARTS</div>
               <TimePicker
                 clearIcon={null}
@@ -95,7 +95,7 @@ const Step1 = ({ onNext }) => {
               />
             </div>
           </div>
-          <div className="col-6">
+          <div className="col-sm-6">
             <div className="time-picker-container">
               <div className="label">ENDS</div>
               <TimePicker

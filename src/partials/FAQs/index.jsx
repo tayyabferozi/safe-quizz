@@ -7,7 +7,7 @@ const FAQs = () => {
   return (
     <Section id="faqs" className="pt-80 pb-60">
       <GridContainer>
-        <div className="col-lg-6">
+        <div className="col-lg-6 d-lg-block d-flex justify-content-center">
           <img
             src="/assets/vectors/faq.svg"
             alt="faq"
@@ -15,7 +15,7 @@ const FAQs = () => {
           />
         </div>
         <div className="col-lg-6 d-flex align-items-center">
-          <div>
+          <div className="mt-991-50">
             <h3>Frequently Asked Questions</h3>
             <p className="mt-10">
               Pellentesque habitant morbi tristique senectus et netus et

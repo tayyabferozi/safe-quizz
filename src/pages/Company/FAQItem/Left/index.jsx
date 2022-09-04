@@ -4,7 +4,7 @@ const Left = () => {
   return (
     <div className="faq-item-left">
       <div className="toc explore-faqs">
-        <h5 className="faq-heading">
+        <h5 className="faq-heading sm">
           <img src="/assets/vectors/info.svg" alt="info" title="info" />
           Table of contents
         </h5>
@@ -20,7 +20,7 @@ const Left = () => {
         </div>
       </div>
       <div className="popular-questions explore-faqs pe-0">
-        <h5 className="faq-heading">
+        <h5 className="faq-heading sm">
           <img src="/assets/vectors/star.svg" alt="star" title="star" />
           Popular Questions
         </h5>

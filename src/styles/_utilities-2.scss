@@ -1,3 +1,5 @@
+@import "./utilities-3";
+
 .fs-10 {
   font-size: 10px !important;
 }
@@ -126,32 +128,32 @@
   font-size: 72px !important;
 }
 
-@media screen and (max-width: 991px) {
-  .fs-991-12 {
+@media screen and (max-width: 1600px) {
+  .fs-1600-12 {
     font-size: 12px !important;
   }
 
-  .fs-991-14 {
+  .fs-1600-14 {
     font-size: 14px !important;
   }
 
-  .fs-991-16 {
+  .fs-1600-16 {
     font-size: 16px !important;
   }
 
-  .fs-991-18 {
+  .fs-1600-18 {
     font-size: 18px !important;
   }
 
-  .fs-991-20 {
+  .fs-1600-20 {
     font-size: 20px !important;
   }
 
-  .fs-991-22 {
+  .fs-1600-22 {
     font-size: 22px !important;
   }
 
-  .fs-991-24 {
+  .fs-1600-24 {
     font-size: 24px !important;
   }
 
@@ -248,6 +250,132 @@
   }
 
   .fs-1600-72 {
+    font-size: 72px !important;
+  }
+}
+
+@media screen and (max-width: 1499px) {
+  .fs-1499-12 {
+    font-size: 12px !important;
+  }
+
+  .fs-1499-14 {
+    font-size: 14px !important;
+  }
+
+  .fs-1499-16 {
+    font-size: 16px !important;
+  }
+
+  .fs-1499-18 {
+    font-size: 18px !important;
+  }
+
+  .fs-1499-20 {
+    font-size: 20px !important;
+  }
+
+  .fs-1499-22 {
+    font-size: 22px !important;
+  }
+
+  .fs-1499-24 {
+    font-size: 24px !important;
+  }
+
+  .fs-1499-26 {
+    font-size: 26px !important;
+  }
+
+  .fs-1499-28 {
+    font-size: 28px !important;
+  }
+
+  .fs-1499-30 {
+    font-size: 30px !important;
+  }
+
+  .fs-1499-32 {
+    font-size: 32px !important;
+  }
+
+  .fs-1499-34 {
+    font-size: 34px !important;
+  }
+
+  .fs-1499-36 {
+    font-size: 36px !important;
+  }
+
+  .fs-1499-38 {
+    font-size: 38px !important;
+  }
+
+  .fs-1499-40 {
+    font-size: 40px !important;
+  }
+
+  .fs-1499-42 {
+    font-size: 42px !important;
+  }
+
+  .fs-1499-44 {
+    font-size: 44px !important;
+  }
+
+  .fs-1499-46 {
+    font-size: 46px !important;
+  }
+
+  .fs-1499-48 {
+    font-size: 48px !important;
+  }
+
+  .fs-1499-50 {
+    font-size: 50px !important;
+  }
+
+  .fs-1499-52 {
+    font-size: 52px !important;
+  }
+
+  .fs-1499-54 {
+    font-size: 54px !important;
+  }
+
+  .fs-1499-56 {
+    font-size: 56px !important;
+  }
+
+  .fs-1499-58 {
+    font-size: 58px !important;
+  }
+
+  .fs-1499-60 {
+    font-size: 60px !important;
+  }
+
+  .fs-1499-62 {
+    font-size: 62px !important;
+  }
+
+  .fs-1499-64 {
+    font-size: 64px !important;
+  }
+
+  .fs-1499-66 {
+    font-size: 66px !important;
+  }
+
+  .fs-1499-68 {
+    font-size: 68px !important;
+  }
+
+  .fs-1499-70 {
+    font-size: 70px !important;
+  }
+
+  .fs-1499-72 {
     font-size: 72px !important;
   }
 }
@@ -5115,6 +5243,36 @@ select {
   cursor: pointer;
 }
 
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  @include transitioned();
+
+  span {
+    width: 30px;
+    height: 4px;
+    background-color: #262626;
+
+    @include transitioned();
+  }
+
+  &.active {
+    transform: translateX(12px);
+
+    span:nth-child(1) {
+      transform: rotate(45deg) translateY(14px);
+    }
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      transform: rotate(-45deg) translateY(-14px);
+    }
+  }
+}
+
 .link-underlined {
   &:not(:hover) {
     text-decoration: underline;
@@ -5129,36 +5287,8 @@ select {
   overflow-y: hidden !important;
 }
 
-@mixin transitioned($delay: 0s) {
-  transition: all 0.4s $delay ease;
-}
-
-@mixin custom-scrollbar() {
-  &::-webkit-scrollbar {
-    width: 3px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background-color: #ccc;
-  }
-}
-
-@mixin custom-scrollbar-2() {
-  &::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: #f4f4f4;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    border-radius: 6px;
-    background-color: $color1;
-  }
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
 }

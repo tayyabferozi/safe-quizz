@@ -8,7 +8,7 @@ const WhyUs = () => {
       <h1 className="text-center fw-bold ">Why Choose Us?</h1>
 
       <div className="features mt-100">
-        <GridContainer>
+        <GridContainer rowClassName="justify-content-center gy-40">
           {[
             {
               icon: "/assets/vectors/why-us-1.svg",
@@ -32,7 +32,10 @@ const WhyUs = () => {
             },
           ].map((el, idx) => {
             return (
-              <div key={"feauter" + idx} className="col-lg-3">
+              <div
+                key={"feauter" + idx}
+                className="col-xxl-3 col-lg-4 col-md-6"
+              >
                 <div className="feature-item">
                   <img src={el.icon} alt="icon" />
 

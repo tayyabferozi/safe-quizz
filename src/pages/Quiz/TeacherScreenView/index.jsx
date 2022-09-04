@@ -34,7 +34,7 @@ const TeacherScreenView = () => {
       <h5 className="text-dark-1 mt-30">Evan Fraser’s Activity:</h5>
 
       <div className="table-container my-20 mb-50">
-        <table>
+        <table style={{ minWidth: 740 }}>
           <tbody>
             {activityData.map((el, idx) => {
               return (

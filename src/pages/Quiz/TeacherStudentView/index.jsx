@@ -50,7 +50,7 @@ const TeacherStudentView = () => {
               Evan <span className="fw-600">Fraser</span>
             </h5>
 
-            <div className="d-flex gap-10">
+            <div className="d-flex justify-content-sm-start justify-content-center gap-10 mt-lg-0 mt-3">
               <div className="badge">Student</div>
               <div className="badge secondary">Grade 8</div>
             </div>
@@ -75,7 +75,7 @@ const TeacherStudentView = () => {
       <h5 className="text-dark-1 mt-30">Evan Fraser’s Activity:</h5>
 
       <div className="table-container my-20 mb-50">
-        <table>
+        <table style={{ minWidth: 740 }}>
           <tbody>
             {activityData.map((el, idx) => {
               return (

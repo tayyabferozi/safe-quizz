@@ -33,7 +33,7 @@ const Step2 = () => {
         <GridContainer className="mt-30">
           {questions.map((el, idx) => {
             return (
-              <div className="col-lg-4" key={"question" + idx}>
+              <div className="col-xxl-4 col-md-6" key={"question" + idx}>
                 <div className="custom-card bordered">
                   <div className="fw-bold">Question {idx + 1}</div>
 
