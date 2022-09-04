@@ -9,6 +9,16 @@ const MainLayout = () => {
       <Navbar />
 
       <div className="layout-main-content">
+        <img
+          src="/assets/vectors/question-mark-xlg.svg"
+          alt="question-mark"
+          className="mark"
+        />
+        <img
+          src="/assets/imgs/bg-landing-hero.png"
+          alt="question-mark"
+          className="bg"
+        />
         <Outlet />
       </div>
 

@@ -53,8 +53,10 @@ function App() {
           <Route path="teacher-screen-view" element={<TeacherScreenView />} />
           <Route path="teacher-student-view" element={<TeacherStudentView />} />
         </Route>
-        <Route path="/" element={<MainLayout />}>
+        <Route path="/" element={<MainLayout withMarks />}>
           <Route index element={<Landing />} />
+        </Route>
+        <Route path="/" element={<MainLayout />}>
           <Route path="support" element={<Support />} />
           <Route path="faqs" element={<FAQs />} />
           <Route path="faq-item" element={<FAQItem />} />

@@ -6,9 +6,10 @@ import Section from "../../../../components/Section";
 const Hero = () => {
   return (
     <Section id="landing-hero">
-      <GridContainer className="main">
-        <div className="col-lg-7 d-flex align-items-center">
-          <div>
+      <img src="/assets/vectors/dots-1.svg" alt="dots" className="dots" />
+      <GridContainer className="main" rowClassName="main-row">
+        <div className="col-xl-7 d-flex align-items-center">
+          <div className="left-inner">
             <h2>
               Create Your <span className="text-primary-1 fw-bold">Quiz</span>{" "}
               in Minutes.
@@ -19,7 +20,7 @@ const Hero = () => {
               your friends or students.
             </p>
 
-            <div className="mt-40 d-flex btns">
+            <div className="mt-40 d-flex flex-column flex-sm-row btns">
               <Button primary>Create Quiz</Button>
               <Button>Learn More</Button>
             </div>
@@ -54,8 +55,8 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="col-lg-5 d-flex align-items-center">
-          <div>
+        <div className="col-xl-5 d-flex align-items-center justify-content-center">
+          <div className="flex-grow-1">
             <h1>
               Perfect for{" "}
               <span className="text-primary-1 fw-bold">Teachers</span>

@@ -228,23 +228,67 @@
   overflow: hidden;
   position: relative;
 
-  .bg {
-    position: absolute;
-    right: 0;
-    top: -108px;
-    width: 70%;
+  p {
+    @media screen and (min-width: 992px) {
+      font-size: 20px;
+    }
+
+    @media screen and (min-width: 1601px) {
+      font-size: 24px;
+    }
   }
 
-  .mark {
+  .dots {
     position: absolute;
-    right: -100px;
-    top: -100px;
+    right: -50px;
+    bottom: -200px;
+
+    @media screen and (max-width: 767px) {
+      width: 120px;
+      right: -20px;
+      bottom: -80px;
+    }
+  }
+
+  .left-inner {
+    @media screen and (min-width: 1200px) {
+      max-width: 700px;
+    }
+  }
+
+  .main-row {
+    @media screen and (max-width: 1399px) {
+      --bs-gutter-x: 100px;
+    }
+
+    @media screen and (max-width: 1270px) {
+      --bs-gutter-x: 50px;
+    }
   }
 
   .main {
     .mockup-container {
       position: relative;
-      padding-bottom: 1.5rem;
+      padding-bottom: 200px;
+
+      @media screen and (max-width: 1199px) {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 600px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 100px;
+        left: 50%;
+        transform: translate(-50%, 100%);
+        width: 110%;
+        padding-top: 4%;
+        background-color: rgba($color: #000000, $alpha: 0.6);
+        border-radius: 50%;
+        filter: blur(16px);
+      }
 
       .mockup-2 {
         position: absolute;
@@ -268,9 +312,29 @@
       align-items: center;
       gap: 20px;
 
+      @media screen and (max-width: 1199px) {
+        margin-top: 70px;
+      }
+
+      @media screen and (max-width: 767px) {
+        margin-top: 40px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
       .step {
         padding: 16px 22px;
         border-radius: 15px;
+
+        @media screen and (max-width: 767px) {
+          min-width: 300px;
+          width: 33.33%;
+        }
+
+        @media screen and (max-width: 575px) {
+          min-width: unset;
+          width: 100%;
+        }
 
         .number {
           font-size: 80px;
@@ -280,6 +344,10 @@
 
         .title {
           position: relative;
+
+          @media screen and (max-width: 1270px) {
+            font-size: 15px;
+          }
 
           &::after {
             content: "";
@@ -293,10 +361,10 @@
         }
 
         p {
-          font-size: 15px;
+          font-size: 14px;
 
           @media screen and (max-width: 1600px) {
-            font-size: 13px;
+            font-size: 12px;
           }
         }
 
@@ -587,6 +655,7 @@
           }
 
           .thumb {
+            cursor: pointer;
             margin: 0.5rem;
 
             &.down {

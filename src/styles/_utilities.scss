@@ -57,7 +57,7 @@ h1 {
 h2 {
   &,
   * {
-    font-size: 50px;
+    font-size: 48px;
     font-weight: 500;
 
     @media screen and (max-width: 1600px) {
@@ -453,6 +453,7 @@ h6 {
   .layout-main-content {
     margin-top: 108px;
     padding-top: 100px;
+    position: relative;
 
     @media screen and (max-width: 1399px) {
       padding-top: 40px;
@@ -464,6 +465,24 @@ h6 {
 
     * {
       color: $color14;
+    }
+
+    .bg {
+      position: absolute;
+      right: 0;
+      top: -108px;
+      width: 55%;
+
+      @media screen and (max-width: 1199px) {
+        display: none;
+      }
+    }
+
+    .mark {
+      position: absolute;
+      left: -330px;
+      top: -430px;
+      max-width: 100%;
     }
 
     h1,
