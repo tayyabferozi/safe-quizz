@@ -1245,14 +1245,6 @@ h6 {
 
           @include transitioned;
 
-          &.active {
-            background-color: $color1;
-
-            * {
-              color: #fff;
-            }
-          }
-
           .icon-container {
             width: 40px;
             height: 40px;
@@ -1264,6 +1256,30 @@ h6 {
 
             .icon {
               width: 20px;
+
+              path,
+              circle,
+              rect {
+                fill: #8b9193;
+              }
+            }
+          }
+
+          &.active {
+            background-color: $color1;
+
+            * {
+              color: #fff;
+            }
+
+            .icon-container {
+              .icon {
+                path,
+                circle,
+                rect {
+                  fill: $color1;
+                }
+              }
             }
           }
         }
