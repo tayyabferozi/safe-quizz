@@ -7,24 +7,40 @@ import QuizButtons from "../../../components/QuizButtons";
 import QuizOption from "../../../components/QuizOption";
 import QuizQuestion from "../../../components/QuizQuestion";
 
-const options = [
-  {
-    option: "The Tigris River",
-  },
-  {
-    option: "The Nile River",
-    active: true,
-  },
-  {
-    option: "The Red Sea",
-  },
-  {
-    option: "The Indian Ocean",
-  },
-];
-
 const Image = () => {
   const [isImgActive, setIsImgActive] = useState(false);
+  const [options, setOptions] = useState([
+    {
+      option: "The Tigris River",
+    },
+    {
+      option: "The Nile River",
+      active: true,
+    },
+    {
+      option: "The Red Sea",
+    },
+    {
+      option: "The Indian Ocean",
+    },
+  ]);
+  const setSelected = (selectedIdx) => {
+    setOptions((prevState) => {
+      let newState = [...prevState];
+
+      newState = newState.map((el, idx) => {
+        el.active = false;
+
+        if (idx === selectedIdx) {
+          el.active = true;
+        }
+
+        return el;
+      });
+
+      return newState;
+    });
+  };
 
   const toggleImg = () => {
     document.querySelector(".layout-main-content").scrollTo(0, 0);
@@ -74,7 +90,12 @@ const Image = () => {
             {options.map((el, idx) => {
               return (
                 <div className="col-lg-6" key={"options-num" + idx}>
-                  <QuizOption statementClassName="w-100" {...el} idx={idx} />
+                  <QuizOption
+                    setSelected={setSelected}
+                    statementClassName="w-100"
+                    {...el}
+                    idx={idx}
+                  />
                 </div>
               );
             })}

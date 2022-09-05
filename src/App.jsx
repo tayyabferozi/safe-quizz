@@ -69,6 +69,8 @@ function App() {
         <Route path="/" element={<AccountLayout />}>
           <Route path="my-exams" element={<MyExams />} />
           <Route path="create-quiz" element={<CreateQuizStep1 />} />
+        </Route>
+        <Route path="/" element={<AccountLayout admin />}>
           <Route path="stats" element={<Stats />} />
           <Route path="activity-log" element={<ActivityLog />} />
         </Route>

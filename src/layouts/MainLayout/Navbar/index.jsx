@@ -67,9 +67,9 @@ const NavbarMain = ({ className }) => {
   return (
     <div className={clsx("nav", className)}>
       <NavLink to="/">Home</NavLink>
-      <NavLink to="/">About</NavLink>
-      <NavLink to="/">Packages</NavLink>
-      <NavLink to="/">Contact</NavLink>
+      <NavLink to="/faqs">About</NavLink>
+      <NavLink to="/pricing">Packages</NavLink>
+      <NavLink to="/support">Contact</NavLink>
     </div>
   );
 };

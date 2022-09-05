@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Search from "../../../components/Search";
 
-const Sidebar = () => {
+const Sidebar = ({ admin }) => {
   const [isActive, setIsActive] = useState(false);
 
   const toggleSidebar = () => {
@@ -24,7 +24,7 @@ const Sidebar = () => {
               Good Evening, <strong>Liano!</strong>
             </h5>
 
-            <div className="badge mt-2">Teacher</div>
+            <div className="badge mt-2">{admin ? "Admin" : "Teacher"}</div>
           </div>
 
           <img
@@ -94,19 +94,21 @@ const Sidebar = () => {
           </NavLink>
         </div>
 
-        <div className="upgrade-wrap">
-          <Link to="/pricing" className="upgrade">
-            <div className="text">
-              <h5>Upgrade to PRO</h5>
+        {!admin && (
+          <div className="upgrade-wrap">
+            <Link to="/pricing" className="upgrade">
+              <div className="text">
+                <h5>Upgrade to PRO</h5>
 
-              <p className="fs-12 mt-1">
-                Lorem ipsum dolor sit amet, consetetur
-              </p>
-            </div>
+                <p className="fs-12 mt-1">
+                  Lorem ipsum dolor sit amet, consetetur
+                </p>
+              </div>
 
-            <img src="/assets/vectors/crown.svg" alt="crown" />
-          </Link>
-        </div>
+              <img src="/assets/vectors/crown.svg" alt="crown" />
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

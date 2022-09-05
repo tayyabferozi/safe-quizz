@@ -1,7 +1,13 @@
 import React from "react";
 import clsx from "clsx";
 
-const QuizOption = ({ option, idx, active, statementClassName }) => {
+const QuizOption = ({
+  option,
+  idx,
+  active,
+  statementClassName,
+  setSelected,
+}) => {
   let digit = "A";
 
   if (idx === 1) {
@@ -16,7 +22,11 @@ const QuizOption = ({ option, idx, active, statementClassName }) => {
     digit = "D";
   }
   return (
-    <div key={option} className={clsx("option", { active })}>
+    <div
+      key={option}
+      className={clsx("option", { active })}
+      onClick={() => setSelected(idx)}
+    >
       <div className="digit">{digit}.</div>
       <div className={clsx(statementClassName, "statement")}>{option}</div>
     </div>
