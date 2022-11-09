@@ -2,6 +2,7 @@ import clsx from "clsx";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import $ from "jquery";
 
 import Button from "../../../components/Button";
@@ -68,7 +69,9 @@ const NavbarMain = ({ className }) => {
     <div className={clsx("nav", className)}>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/faqs">About</NavLink>
-      <NavLink to="/pricing">Packages</NavLink>
+      <HashLink smooth to="/#pricing">
+        Packages
+      </HashLink>
       <NavLink to="/support">Contact</NavLink>
     </div>
   );

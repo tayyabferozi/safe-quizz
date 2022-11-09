@@ -200,6 +200,14 @@
 #pricing {
   background: url("../assets/vectors/bg-pricing.svg") center;
   background-size: cover;
+  position: relative;
+
+  .dots {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 200px;
+  }
 
   .page-container {
     padding: 50px 0 150px;

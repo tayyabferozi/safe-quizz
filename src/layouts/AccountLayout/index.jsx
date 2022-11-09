@@ -4,13 +4,13 @@ import Footer from "../../partials/Footer";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 
-const AccountLayout = ({ admin }) => {
+const AccountLayout = ({ admin, withLog, withSchedule }) => {
   return (
     <div id="account-layout">
       <Navbar />
 
       <div className="layout-body">
-        <Sidebar admin={admin} />
+        <Sidebar admin={admin} withLog={withLog} withSchedule={withSchedule} />
         <div className="layout-main-content">
           <Outlet />
         </div>

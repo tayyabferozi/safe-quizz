@@ -24,7 +24,7 @@ import FAQItem from "./pages/Company/FAQItem";
 import TimedOut from "./pages/Error/TimedOut";
 import AccessDenied from "./pages/Error/AccessDenied";
 import NotFound from "./pages/Error/NotFound";
-import Pricing from "./pages/Company/Pricing";
+// import Pricing from "./pages/Company/Pricing";
 import AccountLayout from "./layouts/AccountLayout";
 
 import MyExams from "./pages/Account/MyExams";
@@ -60,7 +60,7 @@ function App() {
           <Route path="support" element={<Support />} />
           <Route path="faqs" element={<FAQs />} />
           <Route path="faq-item" element={<FAQItem />} />
-          <Route path="pricing" element={<Pricing />} />
+          {/* <Route path="pricing" element={<Pricing />} /> */}
 
           <Route path="408" element={<TimedOut />} />
           <Route path="403" element={<AccessDenied />} />
@@ -70,8 +70,10 @@ function App() {
           <Route path="my-exams" element={<MyExams />} />
           <Route path="create-quiz" element={<CreateQuizStep1 />} />
         </Route>
-        <Route path="/" element={<AccountLayout admin />}>
+        <Route path="/" element={<AccountLayout admin withLog />}>
           <Route path="stats" element={<Stats />} />
+        </Route>
+        <Route path="/" element={<AccountLayout admin withSchedule />}>
           <Route path="activity-log" element={<ActivityLog />} />
         </Route>
         <Route path="*" element={<Navigate to="/404" replace={true} />} />

@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../../../components/Button";
+
 import PricingItem from "../../../components/PricingItem";
 import Section from "../../../components/Section";
 import FAQs from "../../../partials/FAQs";

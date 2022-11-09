@@ -16,7 +16,7 @@ const PricingItem = ({ dark, inverted, em, name, price, listItems }) => {
         {listItems &&
           listItems.map((el, idx) => {
             return (
-              <div className="item" key={"feature" + name + { idx }}>
+              <div className="item" key={"feature" + name + idx}>
                 {el}
               </div>
             );
